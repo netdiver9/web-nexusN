@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1402 952">
+<rect width="1402" height="952" fill="#FDFDFD"/>
+<g fill="#122A68">
+<path d="M250 280 L470 280 L470 320 L320 320 L320 380 L450 380 L450 415 L320 415 L320 478 L470 478 L470 520 L250 520 Z"/>
+<path d="M530 280 L590 280 L720 470 L720 280 L780 280 L780 520 L720 520 L590 330 L590 520 L530 520 Z"/>
+<path d="M840 280 L908 280 L965 380 L1022 280 L1090 280 L1010 410 L1095 520 L1025 520 L965 432 L905 520 L835 520 L920 410 Z"/>
+<path d="M1148 280 L1208 280 L1208 440 C1208 460 1218 470 1240 470 C1262 470 1272 460 1272 440 L1272 280 L1332 280 L1332 442 C1332 495 1300 525 1240 525 C1180 525 1148 495 1148 442 Z"/>
+<path d="M50 280 L110 280 L110 440 C110 460 120 470 142 470 C164 470 174 460 174 440 L174 280 L234 280 L234 442 C234 495 202 525 142 525 C82 525 50 495 50 442 Z"/>
+</g>
+<g transform="translate(550, 580)">
+<rect x="0" y="0" width="300" height="55" fill="none"/>
+<text x="150" y="32" font-family="Arial, sans-serif" font-size="22" font-weight="500" fill="#122A68" text-anchor="middle" letter-spacing="2">Linking People, Powering Progress</text>
+</g>
+<g transform="translate(620, 660)">
+<text x="80" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#278EEC" text-anchor="middle" letter-spacing="6">COMPANY PROFILE</text>
+</g>
+</svg>
