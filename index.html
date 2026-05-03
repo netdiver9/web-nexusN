@@ -16,8 +16,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <svg class="preloader-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                <defs>
+                    <linearGradient id="plGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00d4ff"/>
+                        <stop offset="100%" stop-color="#0d1b3d"/>
+                    </linearGradient>
+                </defs>
+                <path class="pl-shape" d="M10 18 L60 18 L82 50 L60 82 L10 82 L32 50 Z" stroke="url(#plGrad)" stroke-width="1.6" fill="none"/>
+                <path class="pl-letter" d="M28 30 L28 70 L36 70 L36 47 L52 70 L60 70 L60 30 L52 30 L52 53 L36 30 Z" stroke="#fff" stroke-width="1.4" fill="none"/>
+                <circle class="pl-dot" cx="78" cy="35" r="5" fill="#00d4ff"/>
+            </svg>
+            <div class="preloader-text">
+                <span>N</span><span>E</span><span>X</span><span>U</span><span>S</span><span class="pl-under">_</span><span>N</span>
+            </div>
+            <div class="preloader-bar"><span></span></div>
+        </div>
+    </div>
+
     <!-- Cursor follower -->
     <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Sticky side section indicator -->
+    <aside class="side-indicator" id="sideIndicator" aria-hidden="true">
+        <span class="side-num" id="sideNum">01</span>
+        <span class="side-label" id="sideLabel">HOME</span>
+    </aside>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -43,7 +70,10 @@
     <section id="home" class="hero">
         <div class="hero-bg">
             <div class="gradient-mesh"></div>
+            <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
             <div class="grid-pattern"></div>
+            <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
             <div class="noise"></div>
         </div>
 
@@ -105,22 +135,38 @@
         <!-- Marquee Strip -->
         <div class="marquee">
             <div class="marquee-track">
-                <span class="marquee-item">★ TRUST</span>
+                <span class="marquee-item">TRUST</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">EXPERTISE</span>
-                <span class="marquee-item">★ GROWTH</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">GROWTH</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">INNOVATION</span>
-                <span class="marquee-item">★ CONNECTION</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">CONNECTION</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">NETWORK</span>
-                <span class="marquee-item">★ NEXT</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">NEXT</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">NEW</span>
-                <span class="marquee-item">★ TRUST</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">TRUST</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">EXPERTISE</span>
-                <span class="marquee-item">★ GROWTH</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">GROWTH</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">INNOVATION</span>
-                <span class="marquee-item">★ CONNECTION</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">CONNECTION</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">NETWORK</span>
-                <span class="marquee-item">★ NEXT</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
+                <span class="marquee-item">NEXT</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
                 <span class="marquee-item">NEW</span>
+                <span class="marquee-mark" aria-hidden="true"></span>
             </div>
         </div>
     </section>
