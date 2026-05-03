@@ -1,23 +1,38 @@
-// ========================================
-// NEXUS_N - Interactive JavaScript
-// ========================================
+// ================================================================
+// NEXUS_N · Modern Interactions
+// ================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ========================================
-    // Navbar scroll effect
-    // ========================================
     const navbar = document.getElementById('navbar');
     const backToTop = document.getElementById('backToTop');
+    const cursorGlow = document.getElementById('cursorGlow');
 
+    // ============================================================
+    // Page progress indicator
+    // ============================================================
+    const progressBar = document.createElement('div');
+    progressBar.className = 'page-progress';
+    progressBar.innerHTML = '<span></span>';
+    document.body.appendChild(progressBar);
+    const progressFill = progressBar.querySelector('span');
+
+    // ============================================================
+    // Scroll handler
+    // ============================================================
     function handleScroll() {
-        if (window.scrollY > 50) {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollY / docHeight) * 100;
+        progressFill.style.width = progress + '%';
+
+        if (scrollY > 30) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
-        if (window.scrollY > 400) {
+        if (scrollY > 400) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
@@ -29,32 +44,91 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    // ========================================
-    // Mobile menu toggle
-    // ========================================
+    // ============================================================
+    // Cursor glow
+    // ============================================================
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function updateCursor() {
+        glowX += (mouseX - glowX) * 0.12;
+        glowY += (mouseY - glowY) * 0.12;
+        if (cursorGlow) {
+            cursorGlow.style.transform = `translate(${glowX}px, ${glowY}px) translate(-50%, -50%)`;
+        }
+        requestAnimationFrame(updateCursor);
+    }
+    updateCursor();
+
+    // ============================================================
+    // Magnetic effect on buttons
+    // ============================================================
+    const magneticElements = document.querySelectorAll('.btn, .cta-button, .nav-cta, .back-to-top');
+
+    magneticElements.forEach(el => {
+        el.addEventListener('mousemove', function(e) {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            el.style.transform = `translate(${x * 0.18}px, ${y * 0.25}px)`;
+        });
+        el.addEventListener('mouseleave', function() {
+            el.style.transform = '';
+        });
+    });
+
+    // ============================================================
+    // Bento card 3D tilt
+    // ============================================================
+    const tiltCards = document.querySelectorAll('.bento, .stat-card, .contact-card, .feature-card');
+
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            const rotateX = (y - 0.5) * -6;
+            const rotateY = (x - 0.5) * 6;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+        });
+    });
+
+    // ============================================================
+    // Mobile menu
+    // ============================================================
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
-    // ========================================
-    // Active nav link based on scroll position
-    // ========================================
+    // ============================================================
+    // Active nav based on scroll
+    // ============================================================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
     function updateActiveNavLink() {
-        const scrollY = window.scrollY + 100;
+        const scrollY = window.scrollY + 120;
 
         sections.forEach(section => {
             const top = section.offsetTop;
@@ -71,16 +145,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========================================
-    // Back to top button
-    // ========================================
+    // ============================================================
+    // Back to top
+    // ============================================================
     backToTop.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ========================================
+    // ============================================================
     // Service tabs
-    // ========================================
+    // ============================================================
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -93,25 +167,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
             this.classList.add('active');
             const target = document.getElementById(tabId);
-            if (target) {
-                target.classList.add('active');
-            }
+            if (target) target.classList.add('active');
 
-            // Smooth scroll into the business area
             const business = document.getElementById('business');
-            const tabsTop = business.offsetTop + 80;
-            if (window.scrollY > tabsTop + 200) {
+            const tabsTop = business.offsetTop + 100;
+            if (window.scrollY > tabsTop + 300) {
                 window.scrollTo({ top: tabsTop, behavior: 'smooth' });
             }
         });
     });
 
-    // ========================================
-    // Scroll reveal animations
-    // ========================================
+    // ============================================================
+    // Scroll reveal observer
+    // ============================================================
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -80px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
@@ -124,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll(
-        '.about-card, .value-card, .feature-card, .strength-item, .process-step, .contact-card, .about-info, .service-intro, .ais-card'
+        '.stat-card, .bento, .philosophy-card, .why-item, .feature-card, .strength-item, .process-step, .contact-card, .ais-card, .service-hero, .relationship-diagram, .job-codes, .process-section, .strengths, .company-info, .cta-banner, .stats-header, .about-hero, .why-headline-row, .business-headline, .values-header, .contact-headline'
     );
 
     animatedElements.forEach(el => {
@@ -132,22 +203,23 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // ========================================
-    // Counter animation for stats
-    // ========================================
+    // ============================================================
+    // Counter animation
+    // ============================================================
     const counters = document.querySelectorAll('.stat-number[data-count]');
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
                 const target = parseInt(el.getAttribute('data-count'), 10);
-                const suffix = el.textContent.replace(/[0-9]/g, '');
-                const duration = 1800;
+                const original = el.textContent;
+                const suffix = original.replace(/[0-9]/g, '');
+                const duration = 2000;
                 const startTime = performance.now();
 
                 function tick(now) {
                     const progress = Math.min((now - startTime) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const eased = 1 - Math.pow(1 - progress, 4);
                     const current = Math.round(target * eased);
                     el.textContent = current + suffix;
                     if (progress < 1) requestAnimationFrame(tick);
@@ -160,9 +232,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     counters.forEach(el => counterObserver.observe(el));
 
-    // ========================================
-    // Smooth scrolling for anchor links
-    // ========================================
+    // ============================================================
+    // Text split reveal for headlines
+    // ============================================================
+    const splitTargets = document.querySelectorAll('.about-headline, .values-title, .why-headline, .biz-title, .contact-title, .stats-title');
+
+    splitTargets.forEach(el => {
+        const text = el.innerHTML;
+        if (!el.dataset.split) {
+            el.dataset.split = 'true';
+            el.style.overflow = 'hidden';
+        }
+    });
+
+    const splitObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('split-visible');
+                splitObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    splitTargets.forEach(el => splitObserver.observe(el));
+
+    // ============================================================
+    // Smooth scroll
+    // ============================================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const target = this.getAttribute('href');
@@ -173,13 +269,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 const navHeight = navbar.offsetHeight;
                 const offsetTop = targetEl.offsetTop - navHeight + 1;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
         });
     });
+
+    // ============================================================
+    // Parallax on hero
+    // ============================================================
+    const hero = document.querySelector('.hero');
+    const gradientMesh = document.querySelector('.gradient-mesh');
+    const heroContent = document.querySelector('.hero-content');
+
+    if (hero && gradientMesh && heroContent) {
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const heroHeight = hero.offsetHeight;
+            if (scrollY < heroHeight) {
+                const factor = scrollY / heroHeight;
+                gradientMesh.style.transform = `translateY(${scrollY * 0.4}px) scale(${1 + factor * 0.1})`;
+                heroContent.style.transform = `translateY(${scrollY * 0.15}px)`;
+                heroContent.style.opacity = 1 - factor * 0.6;
+            }
+        }, { passive: true });
+    }
 
 });

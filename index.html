@@ -8,27 +8,36 @@
     <title>NEXUS_N | 주식회사 넥서스엔 - Linking People, Powering Progress</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Cursor follower -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <span class="logo-text">NEXUS</span><span class="logo-n">N</span>
+                <span class="logo-mark">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 22V10L22 22V10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">NEXUS<sub>N</sub></span>
             </a>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">HOME</a></li>
-                <li><a href="#about" class="nav-link">ABOUT</a></li>
-                <li><a href="#values" class="nav-link">CORE VALUE</a></li>
-                <li><a href="#business" class="nav-link">BUSINESS</a></li>
-                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                <li><a href="#home" class="nav-link"><span class="nav-num">01</span>HOME</a></li>
+                <li><a href="#about" class="nav-link"><span class="nav-num">02</span>ABOUT</a></li>
+                <li><a href="#values" class="nav-link"><span class="nav-num">03</span>VALUES</a></li>
+                <li><a href="#business" class="nav-link"><span class="nav-num">04</span>BUSINESS</a></li>
+                <li><a href="#contact" class="nav-link"><span class="nav-num">05</span>CONTACT</a></li>
             </ul>
+            <a href="#contact" class="nav-cta">Get in Touch <span>→</span></a>
             <button class="hamburger" id="hamburger" aria-label="메뉴">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span>
             </button>
         </div>
     </nav>
@@ -36,54 +45,140 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <div class="hero-overlay"></div>
-            <div class="hero-particles">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
+            <div class="gradient-mesh"></div>
+            <div class="grid-pattern"></div>
+            <div class="noise"></div>
         </div>
+
+        <div class="hero-side hero-side-left">
+            <div class="vertical-text">SCROLL TO EXPLORE</div>
+        </div>
+        <div class="hero-side hero-side-right">
+            <div class="vertical-text">EST. 2026 · SEOUL</div>
+        </div>
+
         <div class="hero-content">
-            <div class="hero-badge">HR-BUSINESS NO.1</div>
+            <div class="hero-status">
+                <span class="status-dot"></span>
+                <span>HR-BUSINESS · NO.1 PARTNER</span>
+            </div>
+
             <h1 class="hero-title">
-                <span class="title-main">NEXUS</span>
-                <span class="title-circle">N</span>
+                <span class="line line-1">
+                    <span class="word">Linking</span>
+                    <span class="word italic">People,</span>
+                </span>
+                <span class="line line-2">
+                    <span class="word">Powering</span>
+                    <span class="word gradient-word">Progress.</span>
+                </span>
             </h1>
-            <p class="hero-tagline">Linking People, Powering Progress.</p>
-            <p class="hero-subtitle">사람과 기업을 연결해 세상을 더 효율적으로 움직이게 합니다</p>
+
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">COMPANY</div>
+                    <div class="meta-value">주식회사 넥서스엔</div>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <div class="meta-label">FIELD</div>
+                    <div class="meta-value">종합 아웃소싱</div>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <div class="meta-label">VISION</div>
+                    <div class="meta-value">Network · Next · New</div>
+                </div>
+            </div>
+
             <div class="hero-cta">
-                <a href="#business" class="btn btn-primary">서비스 보기</a>
-                <a href="#contact" class="btn btn-secondary">문의하기</a>
+                <a href="#business" class="btn btn-primary">
+                    <span>서비스 살펴보기</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                    <span>상담 신청</span>
+                </a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-            <p>SCROLL</p>
+
+        <!-- Marquee Strip -->
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-item">★ TRUST</span>
+                <span class="marquee-item">EXPERTISE</span>
+                <span class="marquee-item">★ GROWTH</span>
+                <span class="marquee-item">INNOVATION</span>
+                <span class="marquee-item">★ CONNECTION</span>
+                <span class="marquee-item">NETWORK</span>
+                <span class="marquee-item">★ NEXT</span>
+                <span class="marquee-item">NEW</span>
+                <span class="marquee-item">★ TRUST</span>
+                <span class="marquee-item">EXPERTISE</span>
+                <span class="marquee-item">★ GROWTH</span>
+                <span class="marquee-item">INNOVATION</span>
+                <span class="marquee-item">★ CONNECTION</span>
+                <span class="marquee-item">NETWORK</span>
+                <span class="marquee-item">★ NEXT</span>
+                <span class="marquee-item">NEW</span>
+            </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
+    <!-- Stats Section -->
+    <section class="stats">
         <div class="container">
+            <div class="stats-header">
+                <div class="stats-eyebrow">02 — STATISTICS</div>
+                <h2 class="stats-title">
+                    숫자로 보는<br>
+                    <span class="italic">Nexus_N</span>
+                </h2>
+            </div>
             <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="10">10+</div>
-                    <div class="stat-label">Years Experience</div>
-                    <div class="stat-desc">10년 이상 경력 전문가</div>
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-number" data-count="10">10+</div>
+                        <div class="stat-arrow">↗</div>
+                    </div>
+                    <div class="stat-bar"><span style="width: 95%"></span></div>
+                    <div class="stat-info">
+                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-desc">10년 이상 경력의 전문가가 직접 컨설팅</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="32">32</div>
-                    <div class="stat-label">Industry Codes</div>
-                    <div class="stat-desc">파견 허용 32개 직종</div>
+                <div class="stat-card stat-card-dark">
+                    <div class="stat-top">
+                        <div class="stat-number" data-count="32">32</div>
+                        <div class="stat-arrow">↗</div>
+                    </div>
+                    <div class="stat-bar"><span style="width: 100%"></span></div>
+                    <div class="stat-info">
+                        <div class="stat-label">Industry Codes</div>
+                        <div class="stat-desc">법령상 파견 허용 32개 직종 전 분야 대응</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="3">3</div>
-                    <div class="stat-label">Core Services</div>
-                    <div class="stat-desc">핵심 사업분야</div>
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-number" data-count="3">3</div>
+                        <div class="stat-arrow">↗</div>
+                    </div>
+                    <div class="stat-bar"><span style="width: 75%"></span></div>
+                    <div class="stat-info">
+                        <div class="stat-label">Core Services</div>
+                        <div class="stat-desc">파견 · 도급 · 채용대행 종합 솔루션</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">No.1</div>
-                    <div class="stat-label">HR Business</div>
-                    <div class="stat-desc">신뢰받는 HR 파트너</div>
+                <div class="stat-card stat-card-accent">
+                    <div class="stat-top">
+                        <div class="stat-number">No.1</div>
+                        <div class="stat-arrow">↗</div>
+                    </div>
+                    <div class="stat-bar"><span style="width: 100%"></span></div>
+                    <div class="stat-info">
+                        <div class="stat-label">HR Partner</div>
+                        <div class="stat-desc">고객사가 신뢰하는 HR-Business 파트너</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,77 +187,85 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">ABOUT NEXUS_N</span>
-                <h2 class="section-title">회사소개</h2>
-                <div class="section-divider"></div>
+            <div class="section-mark">
+                <span class="mark-num">02</span>
+                <span class="mark-text">ABOUT</span>
             </div>
 
-            <div class="about-intro">
-                <p class="about-quote">
-                    "사람이 모여, 새로운 가치를 만드는 곳 — <strong>Nexus_N</strong>"
-                </p>
-                <p class="about-desc">
-                    Nexus_N은 사람과 기업이 함께 성장하는 <strong>연결의 중심</strong>입니다.
-                    우리는 'nexus'가 상징하는 비즈니스 결합의 중심, 그리고 'N'이 의미하는
-                    <strong>Network, Next, New</strong>의 철학 아래 고객사와 근로자 모두가 만족할 수 있는
-                    지속가능한 인력 솔루션을 제공합니다.
-                </p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 4v16m8-8H4"/>
-                            <circle cx="12" cy="12" r="9"/>
-                        </svg>
-                    </div>
-                    <h3>Network</h3>
-                    <p>모든 관계를 하나의 네트워크로 엮어 더 큰 시너지를 창출합니다.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M5 12h14m-7-7l7 7-7 7"/>
-                        </svg>
-                    </div>
-                    <h3>Next</h3>
-                    <p>더 나은 방법을 찾아 끊임없이 발전하며 미래를 향해 나아갑니다.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2l2.39 7.36H22l-6.18 4.49 2.36 7.36L12 16.72 5.82 21.21l2.36-7.36L2 9.36h7.61z"/>
-                        </svg>
-                    </div>
-                    <h3>New</h3>
-                    <p>일하는 방식을 개선하고, 새로운 서비스를 끊임없이 창조합니다.</p>
+            <div class="about-hero">
+                <h2 class="about-headline">
+                    사람과 기업이 만나<br>
+                    <span class="outline-text">새로운 가치</span>를<br>
+                    만드는 곳.
+                </h2>
+                <div class="about-side">
+                    <p class="about-side-text">
+                        Nexus_N은 단순한 인력 공급을 넘어, 사람과 기업이 함께 성장하는
+                        <strong>지속 가능한 고용 생태계</strong>를 만들어갑니다.
+                    </p>
+                    <p class="about-side-text">
+                        우리는 모든 연결의 중심에서, 신뢰를 기반으로 새로운 일의 가치를
+                        창조하는 기업이 되는 것을 비전으로 합니다.
+                    </p>
                 </div>
             </div>
 
-            <div class="about-info">
-                <h3 class="info-title">기업 정보</h3>
-                <div class="info-table">
-                    <div class="info-row">
-                        <div class="info-cell info-label">회사명</div>
-                        <div class="info-cell">주식회사 넥서스엔</div>
-                        <div class="info-cell info-label">대표자</div>
-                        <div class="info-cell">염시훈</div>
+            <div class="about-philosophy">
+                <div class="philosophy-label">PHILOSOPHY · 'N'의 의미</div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="phi-letter">N</div>
+                        <div class="phi-content">
+                            <h3 class="phi-title">Network</h3>
+                            <p class="phi-desc">모든 관계를 하나의 네트워크로 엮어 더 큰 시너지를 창출합니다.</p>
+                        </div>
                     </div>
-                    <div class="info-row">
-                        <div class="info-cell info-label">주소</div>
-                        <div class="info-cell">서울시 서초구 동산로2길 40</div>
-                        <div class="info-cell info-label">설립일</div>
-                        <div class="info-cell">2026년 5월</div>
+                    <div class="philosophy-card">
+                        <div class="phi-letter">N</div>
+                        <div class="phi-content">
+                            <h3 class="phi-title">Next</h3>
+                            <p class="phi-desc">더 나은 방법을 찾아 끊임없이 발전하며 미래를 향해 나아갑니다.</p>
+                        </div>
                     </div>
-                    <div class="info-row">
-                        <div class="info-cell info-label">사업분야</div>
-                        <div class="info-cell info-wide">종합 아웃소싱 (근로자 파견, 업무위탁[도급], 채용대행)</div>
+                    <div class="philosophy-card">
+                        <div class="phi-letter">N</div>
+                        <div class="phi-content">
+                            <h3 class="phi-title">New</h3>
+                            <p class="phi-desc">일하는 방식을 개선하고, 새로운 서비스를 끊임없이 창조합니다.</p>
+                        </div>
                     </div>
-                    <div class="info-row">
-                        <div class="info-cell info-label">연락처</div>
-                        <div class="info-cell info-wide">Tel : 010-4501-7144 &nbsp; / &nbsp; FAX : 02-6455-0594</div>
+                </div>
+            </div>
+
+            <div class="company-info">
+                <div class="info-header">
+                    <div>
+                        <div class="info-eyebrow">COMPANY INFO</div>
+                        <h3 class="info-headline">기업 정보</h3>
+                    </div>
+                    <a href="#contact" class="info-link">자세한 문의 <span>→</span></a>
+                </div>
+
+                <div class="info-rows">
+                    <div class="info-line">
+                        <div class="info-key">회사명</div>
+                        <div class="info-val">주식회사 넥서스엔</div>
+                        <div class="info-key">대표자</div>
+                        <div class="info-val">염시훈</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-key">설립일</div>
+                        <div class="info-val">2026년 5월</div>
+                        <div class="info-key">사업분야</div>
+                        <div class="info-val">종합 아웃소싱</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-key">주소</div>
+                        <div class="info-val info-val-wide">서울시 서초구 동산로2길 40</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-key">연락처</div>
+                        <div class="info-val info-val-wide">Tel : 010-4501-7144 &nbsp;/&nbsp; FAX : 02-6455-0594</div>
                     </div>
                 </div>
             </div>
@@ -171,42 +274,148 @@
 
     <!-- Core Values Section -->
     <section id="values" class="values">
+        <div class="values-bg"></div>
         <div class="container">
-            <div class="section-header light">
-                <span class="section-eyebrow">CORE VALUE</span>
-                <h2 class="section-title">핵심가치</h2>
-                <div class="section-divider"></div>
-                <p class="section-desc">
-                    Nexus_N은 단순한 인력 공급을 넘어, 사람과 기업이 함께 성장하는<br>
-                    지속 가능한 고용 생태계를 만들어갑니다.
-                </p>
+            <div class="section-mark light">
+                <span class="mark-num">03</span>
+                <span class="mark-text">CORE VALUE</span>
             </div>
 
-            <div class="values-grid">
-                <div class="value-card" data-num="01">
-                    <div class="value-num">01</div>
-                    <h3 class="value-title">신뢰 <span class="en">Trust</span></h3>
-                    <p>정직과 원칙으로 관계를 쌓고, 투명한 운영과 법적 준수로 고객과 근로자의 신뢰를 지킵니다.</p>
+            <div class="values-header">
+                <h2 class="values-title">
+                    우리가 일하는 <span class="italic">5가지 방식.</span>
+                </h2>
+                <p class="values-sub">사람이 모여, 새로운 가치를 만드는 곳 — Nexus_N</p>
+            </div>
+
+            <div class="values-bento">
+                <div class="bento bento-large" data-num="01">
+                    <div class="bento-inner">
+                        <div class="bento-num">01</div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">신뢰<span>Trust</span></h3>
+                            <p class="bento-desc">정직과 원칙으로 관계를 쌓고, 투명한 운영과 법적 준수로 고객과 근로자의 신뢰를 지킵니다.</p>
+                        </div>
+                        <div class="bento-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="value-card" data-num="02">
-                    <div class="value-num">02</div>
-                    <h3 class="value-title">전문성 <span class="en">Expertise</span></h3>
-                    <p>깊이 있는 지식과 실행력으로 결과를 만들어내고, 다양한 산업과 인력 관리 경험으로 최적의 솔루션을 제공합니다.</p>
+
+                <div class="bento" data-num="02">
+                    <div class="bento-inner">
+                        <div class="bento-num">02</div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">전문성<span>Expertise</span></h3>
+                            <p class="bento-desc">깊이 있는 지식과 실행력으로 결과를 만들어냅니다.</p>
+                        </div>
+                        <div class="bento-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="value-card" data-num="03">
-                    <div class="value-num">03</div>
-                    <h3 class="value-title">상생 <span class="en">Growth</span></h3>
-                    <p>고객과 근로자가 함께 성장하고 함께 이익을 나누는 구조를 지향합니다.</p>
+
+                <div class="bento" data-num="03">
+                    <div class="bento-inner">
+                        <div class="bento-num">03</div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">상생<span>Growth</span></h3>
+                            <p class="bento-desc">함께 성장하고 함께 이익을 나누는 구조를 지향합니다.</p>
+                        </div>
+                        <div class="bento-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 17l6-6 4 4 8-8"/>
+                                <polyline points="17 7 21 7 21 11"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="value-card" data-num="04">
-                    <div class="value-num">04</div>
-                    <h3 class="value-title">혁신 <span class="en">Innovation</span></h3>
-                    <p>더 나은 방법을 찾아 끊임없이 발전합니다. 일하는 방식을 개선하고, 새로운 서비스를 창조합니다.</p>
+
+                <div class="bento" data-num="04">
+                    <div class="bento-inner">
+                        <div class="bento-num">04</div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">혁신<span>Innovation</span></h3>
+                            <p class="bento-desc">더 나은 방법을 찾아 끊임없이 발전하고 새로운 서비스를 창조합니다.</p>
+                        </div>
+                        <div class="bento-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.5.4.7 1 .7 1.6V18h6.6v-1.7c0-.6.2-1.2.7-1.6A7 7 0 0 0 12 2z"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="value-card" data-num="05">
-                    <div class="value-num">05</div>
-                    <h3 class="value-title">연결 <span class="en">Connection</span></h3>
-                    <p>모든 관계를 하나의 네트워크로 엮어 더 큰 시너지를 만듭니다.</p>
+
+                <div class="bento bento-large bento-accent" data-num="05">
+                    <div class="bento-inner">
+                        <div class="bento-num">05</div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">연결<span>Connection</span></h3>
+                            <p class="bento-desc">모든 관계를 하나의 네트워크로 엮어 더 큰 시너지를 만듭니다. Nexus는 결합의 중심, 우리는 그 중심에 있습니다.</p>
+                        </div>
+                        <div class="bento-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <circle cx="5" cy="5" r="2"/>
+                                <circle cx="19" cy="5" r="2"/>
+                                <circle cx="5" cy="19" r="2"/>
+                                <circle cx="19" cy="19" r="2"/>
+                                <line x1="7" y1="7" x2="10" y2="10"/>
+                                <line x1="17" y1="7" x2="14" y2="10"/>
+                                <line x1="7" y1="17" x2="10" y2="14"/>
+                                <line x1="17" y1="17" x2="14" y2="14"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Nexus_N -->
+    <section class="why">
+        <div class="container">
+            <div class="section-mark">
+                <span class="mark-num">04</span>
+                <span class="mark-text">WHY NEXUS_N</span>
+            </div>
+
+            <div class="why-headline-row">
+                <h2 class="why-headline">
+                    왜 <span class="italic">넥서스엔</span>인가
+                </h2>
+                <div class="why-headline-right">
+                    <p>10년 이상의 현장 경험과 체계적인 인력 관리 시스템을 바탕으로,<br>
+                    고객사의 인사·노무 부담을 최소화하고 최적의 인력 솔루션을 제공합니다.</p>
+                </div>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-num">01</div>
+                    <h4>현장 중심 컨설팅</h4>
+                    <p>생산 / 물류 / 판매 등 다양한 산업 분야에서 10년 이상 경력을 가진 전문가가 파트너사에 맞는 컨설팅을 제공합니다.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-num">02</div>
+                    <h4>체계적인 운영</h4>
+                    <p>축적된 운영 노하우와 시스템화된 프로세스로 안정적이고 효율적인 인력 운영을 보장합니다.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-num">03</div>
+                    <h4>유연한 인력 솔루션</h4>
+                    <p>경기 변동, 계절적 수요, 일시적 업무량 변화에 즉각 대응하는 유연한 인력 운영이 가능합니다.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-num">04</div>
+                    <h4>법적 준수 · 신뢰</h4>
+                    <p>관련 법령을 철저히 준수하며 투명한 운영으로 고객사와 근로자 모두의 신뢰를 지킵니다.</p>
                 </div>
             </div>
         </div>
@@ -215,13 +424,18 @@
     <!-- Business Areas Section -->
     <section id="business" class="business">
         <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">BUSINESS AREA</span>
-                <h2 class="section-title">사업분야</h2>
-                <div class="section-divider"></div>
-                <p class="section-desc">
-                    기업의 인력 운영 효율성과 안정적인 사업 수행을 지원하기 위해<br>
-                    근로자파견, 업무위탁(도급), 채용대행을 전문적으로 수행하는 종합 아웃소싱 기업입니다.
+            <div class="section-mark">
+                <span class="mark-num">05</span>
+                <span class="mark-text">BUSINESS</span>
+            </div>
+
+            <div class="business-headline">
+                <h2 class="biz-title">
+                    <span class="italic">3가지</span> 핵심 사업으로<br>
+                    완성하는 인력 솔루션.
+                </h2>
+                <p class="biz-sub">
+                    근로자 파견 · 도급(업무위탁) · 채용대행 — 기업의 인력 운영 효율성과 안정적인 사업 수행을 지원합니다.
                 </p>
             </div>
 
@@ -231,36 +445,43 @@
                     <span class="tab-num">01</span>
                     <span class="tab-name">근로자 파견</span>
                     <span class="tab-en">Staffing Service</span>
+                    <span class="tab-arrow">↗</span>
                 </button>
                 <button class="tab-btn" data-tab="outsourcing">
                     <span class="tab-num">02</span>
                     <span class="tab-name">도급(업무위탁)</span>
                     <span class="tab-en">Outsourcing Service</span>
+                    <span class="tab-arrow">↗</span>
                 </button>
                 <button class="tab-btn" data-tab="recruitment">
                     <span class="tab-num">03</span>
                     <span class="tab-name">채용대행</span>
                     <span class="tab-en">Recruitment Agency</span>
+                    <span class="tab-arrow">↗</span>
                 </button>
             </div>
 
             <!-- Tab Content: Staffing Service -->
             <div class="tab-content active" id="staffing">
-                <div class="service-intro">
-                    <h3>근로자 파견</h3>
-                    <p>'근로자파견'이라고도 하며 파견사업주가 근로자를 고용한 후 그 고용관계를 유지하면서 근로자 파견계약의 내용에 따라 사용사업주의 지휘 명령을 받아 사용사업주를 위한 근로에 종사하게 하는 새로운 고용형태를 말합니다.</p>
+                <div class="service-hero">
+                    <div class="service-hero-num">01</div>
+                    <h3 class="service-hero-title">근로자 파견</h3>
+                    <p class="service-hero-desc">파견사업주가 근로자를 고용한 후 그 고용관계를 유지하면서 근로자 파견계약의 내용에 따라 사용사업주의 지휘 명령을 받아 사용사업주를 위한 근로에 종사하게 하는 새로운 고용형태를 말합니다.</p>
                 </div>
 
                 <div class="feature-cards">
                     <div class="feature-card">
+                        <div class="feature-num">01</div>
                         <h4>파견 허용 32개 직종</h4>
                         <p>노동부가 정한 32개의 파견대상 업무에 한해 근로자파견 가능</p>
                     </div>
                     <div class="feature-card">
+                        <div class="feature-num">02</div>
                         <h4>휴직 대체 파견</h4>
                         <p>출산·질병·부상 등으로 결원 발생 시 해당 기간 동안 근로자파견 사용 가능</p>
                     </div>
                     <div class="feature-card">
+                        <div class="feature-num">03</div>
                         <h4>일시간헐적 파견</h4>
                         <p>파견이 원칙적으로 제한된 직종(예: 생산직)이라도 일시·간헐적인 인력 수요가 있는 경우 3개월 이내에 파견사용 가능</p>
                     </div>
@@ -274,7 +495,7 @@
                             <h5>인사노무 관리적 측면</h5>
                             <ul>
                                 <li>인원 선발의 간소화</li>
-                                <li>인적자원의 적시, 적소 활용으로 노동의 유연성 증가</li>
+                                <li>인적자원의 적시·적소 활용으로 노동의 유연성 증가</li>
                             </ul>
                         </div>
                         <div class="strength-item">
@@ -311,10 +532,9 @@
                         </div>
                         <div class="diagram-node">파견근로자</div>
                     </div>
-                    <p class="diagram-caption">↑ 고용계약관계 ↑</p>
+                    <p class="diagram-caption">— 고용계약관계 —</p>
                 </div>
 
-                <!-- Job Codes -->
                 <div class="job-codes">
                     <h4 class="codes-title">근로자 파견 허용 32개 업종</h4>
                     <div class="codes-layout">
@@ -359,10 +579,11 @@
                     </div>
                 </div>
 
-                <!-- Process -->
                 <div class="process-section">
-                    <h4 class="process-title">근로자 파견 Process</h4>
-                    <p class="process-desc">안정적인 노무 관리 체계를 통해 고객사에 최적화된 인력 솔루션을 제안합니다.</p>
+                    <div class="process-header">
+                        <h4 class="process-title">근로자 파견 Process</h4>
+                        <p class="process-desc">안정적인 노무 관리 체계를 통해 고객사에 최적화된 인력 솔루션을 제안합니다.</p>
+                    </div>
                     <div class="process-grid process-grid-8">
                         <div class="process-step">
                             <div class="step-num">01</div>
@@ -433,14 +654,15 @@
 
             <!-- Tab Content: Outsourcing Service -->
             <div class="tab-content" id="outsourcing">
-                <div class="service-intro">
-                    <h3>도급(업무위탁)</h3>
-                    <p>기업의 비핵심 업무를 외부 아웃소싱 전문기관에 위탁하여 특정한 업무를 수행하는 방식으로서 단순하고 반복적인 업무가 아웃소싱 되면서 조직이 슬림해지고 인력의 관리비용이 최소화되면서 기업운영비용이 절감되며 절감된 비용을 핵심 분야에 투자함으로써 기업의 경쟁력을 강화 시킵니다.</p>
+                <div class="service-hero">
+                    <div class="service-hero-num">02</div>
+                    <h3 class="service-hero-title">도급(업무위탁)</h3>
+                    <p class="service-hero-desc">기업의 비핵심 업무를 외부 아웃소싱 전문기관에 위탁하여 특정한 업무를 수행하는 방식으로서, 단순하고 반복적인 업무가 아웃소싱 되면서 조직이 슬림해지고 인력의 관리비용이 최소화되어 절감된 비용을 핵심 분야에 투자함으로써 기업의 경쟁력을 강화시킵니다.</p>
                 </div>
 
                 <div class="feature-cards three-cols">
                     <div class="feature-card">
-                        <div class="feature-tag">Product</div>
+                        <div class="feature-tag">PRODUCT</div>
                         <h4>생산 아웃소싱</h4>
                         <ul>
                             <li>생산공정 전체 완전 도급</li>
@@ -449,7 +671,7 @@
                         </ul>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-tag">Logistics</div>
+                        <div class="feature-tag">LOGISTICS</div>
                         <h4>물류 아웃소싱</h4>
                         <ul>
                             <li>1PL, 2PL, 3PL의 위탁운영</li>
@@ -458,7 +680,7 @@
                         </ul>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-tag">Sales</div>
+                        <div class="feature-tag">SALES</div>
                         <h4>판매 아웃소싱</h4>
                         <ul>
                             <li>백화점 매장 판매 위탁 도급</li>
@@ -513,12 +735,14 @@
                         </div>
                         <div class="diagram-node">도급사</div>
                     </div>
-                    <p class="diagram-caption">↑ 도급업무의 지지/감독 ↑</p>
+                    <p class="diagram-caption">— 도급업무의 지지/감독 —</p>
                 </div>
 
                 <div class="process-section">
-                    <h4 class="process-title">도급(업무위탁) Process</h4>
-                    <p class="process-desc">다양한 산업 분야(생산/물류/판매 등)에서 10년 이상의 경력을 가진 전문가가 파트너사에 맞는 컨설팅을 제공합니다.</p>
+                    <div class="process-header">
+                        <h4 class="process-title">도급(업무위탁) Process</h4>
+                        <p class="process-desc">다양한 산업 분야(생산/물류/판매 등)에서 10년 이상의 경력을 가진 전문가가 파트너사에 맞는 컨설팅을 제공합니다.</p>
+                    </div>
                     <div class="process-grid process-grid-5">
                         <div class="process-step">
                             <div class="step-num">01</div>
@@ -569,14 +793,16 @@
 
             <!-- Tab Content: Recruitment Agency -->
             <div class="tab-content" id="recruitment">
-                <div class="service-intro">
-                    <h3>채용대행</h3>
-                    <p>전문적인 채용 프로세스를 적용하여 현장 직무에 적합한 인재를 선발합니다. 채용의 계획 단계에서 최종 선발까지의 전 프로세스를 수립하고 진행합니다.</p>
+                <div class="service-hero">
+                    <div class="service-hero-num">03</div>
+                    <h3 class="service-hero-title">채용대행</h3>
+                    <p class="service-hero-desc">전문적인 채용 프로세스를 적용하여 현장 직무에 적합한 인재를 선발합니다. 채용의 계획 단계에서 최종 선발까지의 전 프로세스를 수립하고 진행합니다.</p>
                 </div>
 
                 <div class="as-is-to-be">
                     <div class="ais-card as-is">
-                        <h4>As-Is</h4>
+                        <div class="ais-tag">AS-IS</div>
+                        <h4>지금의 어려움</h4>
                         <ul>
                             <li>채용업무의 과부하</li>
                             <li>조직과 맞지 않는 합격자</li>
@@ -591,7 +817,8 @@
                         </svg>
                     </div>
                     <div class="ais-card to-be">
-                        <h4>To-Be</h4>
+                        <div class="ais-tag">TO-BE</div>
+                        <h4>달라지는 점</h4>
                         <ul>
                             <li>조직 부적응자 감소 · 조기 퇴사율 감소</li>
                             <li>기업의 채용브랜드 강화 · 관심 증대</li>
@@ -641,17 +868,19 @@
                         </div>
                         <div class="diagram-node">넥서스엔</div>
                         <div class="diagram-arrow">
-                            <span class="arrow-label">인재채용/심층인터뷰<br>/사후관리</span>
+                            <span class="arrow-label">인재채용 / 심층인터뷰<br>/ 사후관리</span>
                             <span class="arrow-line"></span>
                         </div>
                         <div class="diagram-node">근로자</div>
                     </div>
-                    <p class="diagram-caption">↑ 면접진행 및 최종합격자 입사 ↑</p>
+                    <p class="diagram-caption">— 면접진행 및 최종합격자 입사 —</p>
                 </div>
 
                 <div class="process-section">
-                    <h4 class="process-title">채용대행 Process</h4>
-                    <p class="process-desc">체계적인 채용 솔루션을 통해 고객사에 최적화된 인력을 제안합니다.</p>
+                    <div class="process-header">
+                        <h4 class="process-title">채용대행 Process</h4>
+                        <p class="process-desc">체계적인 채용 솔루션을 통해 고객사에 최적화된 인력을 제안합니다.</p>
+                    </div>
                     <div class="process-grid process-grid-4">
                         <div class="process-step">
                             <div class="step-num">01</div>
@@ -702,57 +931,82 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
+        <div class="contact-bg"></div>
         <div class="container">
-            <div class="section-header light">
-                <span class="section-eyebrow">CONTACT US</span>
-                <h2 class="section-title">문의하기</h2>
-                <div class="section-divider"></div>
-                <p class="section-desc">
-                    인력 솔루션이 필요하신가요? 넥서스엔 전문가가 최적의 솔루션을 제공합니다.
+            <div class="section-mark light">
+                <span class="mark-num">06</span>
+                <span class="mark-text">CONTACT</span>
+            </div>
+
+            <div class="contact-headline">
+                <h2 class="contact-title">
+                    <span class="italic">Let's</span> connect.
+                </h2>
+                <p class="contact-sub">
+                    인력 운영의 모든 고민, 넥서스엔이 함께 해결합니다.<br>
+                    지금 바로 전문가와 상담하세요.
                 </p>
             </div>
 
             <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
+                <a href="tel:010-4501-7144" class="contact-card contact-card-primary">
+                    <div class="contact-card-top">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-arrow">↗</span>
                     </div>
-                    <h3>전화 문의</h3>
-                    <p class="contact-info">010-4501-7144</p>
-                    <p class="contact-sub">평일 09:00 - 18:00</p>
+                    <div class="contact-card-bottom">
+                        <div class="contact-label">CALL US</div>
+                        <div class="contact-info">010-4501-7144</div>
+                        <div class="contact-desc">평일 09:00 - 18:00 · 토일/공휴일 휴무</div>
+                    </div>
+                </a>
+
+                <div class="contact-card">
+                    <div class="contact-card-top">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="contact-card-bottom">
+                        <div class="contact-label">VISIT US</div>
+                        <div class="contact-info">서울시 서초구</div>
+                        <div class="contact-desc">동산로2길 40</div>
+                    </div>
                 </div>
+
                 <div class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M6 9V2h12v7"/>
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                            <path d="M6 14h12v8H6z"/>
-                        </svg>
+                    <div class="contact-card-top">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M6 9V2h12v7"/>
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                                <path d="M6 14h12v8H6z"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3>FAX</h3>
-                    <p class="contact-info">02-6455-0594</p>
-                    <p class="contact-sub">서류 송부</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
+                    <div class="contact-card-bottom">
+                        <div class="contact-label">FAX</div>
+                        <div class="contact-info">02-6455-0594</div>
+                        <div class="contact-desc">서류 송부용</div>
                     </div>
-                    <h3>오시는 길</h3>
-                    <p class="contact-info">서울시 서초구</p>
-                    <p class="contact-sub">동산로2길 40</p>
                 </div>
             </div>
 
-            <div class="cta-box">
-                <h3>HR Business No.1, Nexus_N과 함께하세요</h3>
-                <p>인력 운영의 모든 고민, 넥서스엔이 함께 해결합니다.</p>
-                <a href="tel:010-4501-7144" class="btn btn-primary btn-large">
-                    지금 상담 신청하기
+            <div class="cta-banner">
+                <div class="cta-text">
+                    <h3>HR Business <span>No.1</span><br>Nexus_N과 함께하세요.</h3>
+                    <p>지금 바로 전문 컨설턴트와 상담하실 수 있습니다.</p>
+                </div>
+                <a href="tel:010-4501-7144" class="cta-button">
+                    <span>상담 신청하기</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
                 </a>
             </div>
         </div>
@@ -761,39 +1015,51 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-text">NEXUS</span><span class="logo-n">N</span>
+            <div class="footer-top">
+                <div class="footer-brand-area">
+                    <h3 class="footer-tagline">
+                        Linking <span class="italic">People,</span><br>
+                        Powering <span class="gradient-word">Progress.</span>
+                    </h3>
+                    <p class="footer-quote">"사람이 모여, 새로운 가치를 만드는 곳 — Nexus_N"</p>
+                </div>
+                <div class="footer-meta">
+                    <div class="footer-col">
+                        <h4>NAVIGATION</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#values">Core Values</a></li>
+                            <li><a href="#business">Business</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
                     </div>
-                    <p class="footer-tagline">Linking People, Powering Progress.</p>
-                </div>
-                <div class="footer-info">
-                    <h4>주식회사 넥서스엔</h4>
-                    <p>대표자 : 염시훈</p>
-                    <p>주소 : 서울시 서초구 동산로2길 40</p>
-                    <p>Tel : 010-4501-7144 &nbsp;|&nbsp; Fax : 02-6455-0594</p>
-                </div>
-                <div class="footer-services">
-                    <h4>BUSINESS</h4>
-                    <ul>
-                        <li><a href="#business">근로자 파견</a></li>
-                        <li><a href="#business">도급(업무위탁)</a></li>
-                        <li><a href="#business">채용대행</a></li>
-                    </ul>
+                    <div class="footer-col">
+                        <h4>SERVICES</h4>
+                        <ul>
+                            <li><a href="#business">근로자 파견</a></li>
+                            <li><a href="#business">도급(업무위탁)</a></li>
+                            <li><a href="#business">채용대행</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>CONTACT</h4>
+                        <ul>
+                            <li>Tel : 010-4501-7144</li>
+                            <li>Fax : 02-6455-0594</li>
+                            <li>서울시 서초구 동산로2길 40</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
+                <div class="footer-logo-text">NEXUS<sub>N</sub></div>
                 <p>&copy; 2026 NEXUS_N Co., Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to top button -->
     <button class="back-to-top" id="backToTop" aria-label="맨 위로">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
     <script src="script.js"></script>
