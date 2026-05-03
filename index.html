@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+    <link rel="apple-touch-icon" href="assets/favicon-192.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,8 +23,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo" aria-label="NEXUS_N 홈">
-                <img src="assets/logo-wordmark-light.svg" alt="NEXUS_N" class="logo-img logo-img-dark">
-                <img src="assets/logo-wordmark.svg" alt="NEXUS_N" class="logo-img logo-img-light">
+                <img src="assets/logo-horizontal.png" alt="NEXUS_N" class="logo-img">
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link"><span class="nav-num">01</span>HOME</a></li>
@@ -52,6 +53,9 @@
         <div class="hero-side hero-side-right">
             <div class="vertical-text">EST. 2026 · SEOUL</div>
         </div>
+
+        <!-- Hero brand watermark -->
+        <img src="assets/logo-vertical.png" alt="" class="hero-watermark" aria-hidden="true">
 
         <div class="hero-content">
             <div class="hero-status">
@@ -207,7 +211,10 @@
             </div>
 
             <div class="about-philosophy">
-                <div class="philosophy-label">PHILOSOPHY · 'N'의 의미</div>
+                <div class="philosophy-label">
+                    <img src="assets/logo-vertical.png" alt="" class="philosophy-mark" aria-hidden="true">
+                    PHILOSOPHY · 'N'의 의미
+                </div>
                 <div class="philosophy-grid">
                     <div class="philosophy-card">
                         <div class="phi-letter">N</div>
@@ -1013,7 +1020,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand-area">
-                    <img src="assets/logo-wordmark-light.svg" alt="NEXUS_N" class="footer-logo-img">
+                    <img src="assets/logo-vertical.png" alt="NEXUS_N" class="footer-logo-img">
                     <h3 class="footer-tagline">
                         Linking <span class="italic">People,</span><br>
                         Powering <span class="gradient-word">Progress.</span>
@@ -1049,7 +1056,6 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <img src="assets/logo-mark-light.svg" alt="NEXUS_N" class="footer-mark">
                 <p>&copy; 2026 NEXUS_N Co., Ltd. All Rights Reserved.</p>
             </div>
         </div>

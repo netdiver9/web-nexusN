@@ -160,17 +160,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .logo:hover { opacity: 0.85; }
 
 .logo-img {
-    height: 38px;
+    height: 36px;
     width: auto;
     display: block;
-    transition: opacity var(--t-fast) var(--ease);
+    transition: filter var(--t-med) var(--ease), opacity var(--t-fast) var(--ease);
+    /* On dark backgrounds (initial state), invert to white */
+    filter: brightness(0) invert(1);
 }
 
-.logo-img-light { display: none; }
-.logo-img-dark { display: block; }
-
-.navbar.scrolled .logo-img-dark { display: none; }
-.navbar.scrolled .logo-img-light { display: block; }
+.navbar.scrolled .logo-img {
+    /* On light scrolled state, use original CI colors */
+    filter: none;
+}
 
 .nav-menu {
     display: flex;
@@ -322,6 +323,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     letter-spacing: 0.4em;
     color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
+}
+
+.hero-watermark {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 700px;
+    width: auto;
+    z-index: 1;
+    opacity: 0.08;
+    filter: brightness(0) invert(1);
+    pointer-events: none;
+    user-select: none;
+    animation: watermarkFloat 12s ease-in-out infinite;
+}
+
+@keyframes watermarkFloat {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-52%) translateX(-15px); }
 }
 
 .hero-content {
@@ -762,6 +783,9 @@ section { padding: 160px 0; position: relative; }
 }
 
 .philosophy-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     font-family: var(--f-mono);
     font-size: 0.78rem;
     font-weight: 500;
@@ -771,6 +795,12 @@ section { padding: 160px 0; position: relative; }
     padding-bottom: 24px;
     border-bottom: 1px solid var(--line);
     text-transform: uppercase;
+}
+
+.philosophy-mark {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .philosophy-grid {
@@ -2012,16 +2042,13 @@ section { padding: 160px 0; position: relative; }
 }
 
 .footer-logo-img {
-    height: 48px;
+    height: 140px;
     width: auto;
     display: block;
-    margin-bottom: 28px;
-}
-
-.footer-mark {
-    height: 32px;
-    width: auto;
-    display: block;
+    margin-bottom: 32px;
+    /* Make the dark navy logo visible on dark footer by inverting to white */
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
 }
 
 .footer-tagline {
@@ -2302,9 +2329,10 @@ section { padding: 160px 0; position: relative; }
     .hero-cta { flex-direction: column; }
     .btn { width: 100%; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
-    .logo-img { height: 30px; }
-    .footer-logo-img { height: 40px; }
-    .footer-mark { height: 28px; }
+    .logo-img { height: 28px; }
+    .footer-logo-img { height: 100px; }
+    .hero-watermark { height: 360px; right: -80px; opacity: 0.06; }
+    .philosophy-mark { height: 24px; }
 }
 
 @media (max-width: 480px) {

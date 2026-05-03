@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <defs>
-    <linearGradient id="fvNavy" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#122A68"/>
-      <stop offset="100%" stop-color="#1A3060"/>
-    </linearGradient>
-  </defs>
-  <path d="M5 12 L62 12 L88 50 L62 88 L5 88 L31 50 Z" fill="url(#fvNavy)"/>
-  <path d="M24 26 L24 74 L34 74 L34 47 L54 74 L64 74 L64 26 L54 26 L54 53 L34 26 Z" fill="#FFFFFF"/>
-  <circle cx="82" cy="32" r="7" fill="#00D4FF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="#FFFFFF"/>
+  <!-- Left navy figure -->
+  <g fill="#1A3868">
+    <circle cx="62" cy="38" r="22"/>
+    <path d="M30 60 h64 v50 l50 60 v22 q0 5 -5 5 h-30 q-5 0 -8 -4 l-31 -42 v40 q0 5 -5 5 h-30 q-5 0 -5 -5 v-50 l50 -60 v-21 z"/>
+  </g>
+  <!-- Right blue figure -->
+  <g fill="#3B7DD0">
+    <circle cx="138" cy="38" r="22"/>
+    <path d="M106 60 h64 v110 q0 5 -5 5 h-30 q-5 0 -5 -5 v-50 l-30 -36 z"/>
+  </g>
 </svg>
