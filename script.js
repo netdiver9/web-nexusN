@@ -12,25 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursorGlow = document.getElementById('cursorGlow');
 
     // ============================================================
-    // Preloader — fade out once page is settled
-    // ============================================================
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        const minDelay = prefersReducedMotion ? 200 : 1700;
-        const start = performance.now();
-        const dismiss = () => {
-            const elapsed = performance.now() - start;
-            const wait = Math.max(0, minDelay - elapsed);
-            setTimeout(() => {
-                preloader.classList.add('done');
-                setTimeout(() => preloader.remove(), 800);
-            }, wait);
-        };
-        if (document.readyState === 'complete') dismiss();
-        else window.addEventListener('load', dismiss, { once: true });
-    }
-
-    // ============================================================
     // Page progress indicator
     // ============================================================
     const progressBar = document.createElement('div');
